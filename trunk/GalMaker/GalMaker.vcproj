@@ -5,6 +5,10 @@
 	Name="GalMaker"
 	ProjectGUID="{EE49F34B-FB5E-4EED-BC2F-84D74C3C5275}"
 	RootNamespace="GalMaker"
+	SccProjectName="Svn"
+	SccAuxPath="Svn"
+	SccLocalPath="Svn"
+	SccProvider="SubversionScc"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
