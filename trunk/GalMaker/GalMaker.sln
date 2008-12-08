@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GalMaker", "GalMaker\GalMaker.vcproj", "{90EB8638-F971-42A3-8661-EC70F5E33589}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pack", "Pack\Pack.vcproj", "{AFB71A13-9B30-48D6-8A7E-5C76F1FB2129}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PackLib", "PackLib\PackLib.vcproj", "{9D47BA88-3F79-4161-8A70-358D63D3563C}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +21,14 @@ Global
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Debug|Win32.Build.0 = Debug|Win32
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Release|Win32.ActiveCfg = Release|Win32
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Release|Win32.Build.0 = Release|Win32
+		{AFB71A13-9B30-48D6-8A7E-5C76F1FB2129}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AFB71A13-9B30-48D6-8A7E-5C76F1FB2129}.Debug|Win32.Build.0 = Debug|Win32
+		{AFB71A13-9B30-48D6-8A7E-5C76F1FB2129}.Release|Win32.ActiveCfg = Release|Win32
+		{AFB71A13-9B30-48D6-8A7E-5C76F1FB2129}.Release|Win32.Build.0 = Release|Win32
+		{9D47BA88-3F79-4161-8A70-358D63D3563C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9D47BA88-3F79-4161-8A70-358D63D3563C}.Debug|Win32.Build.0 = Debug|Win32
+		{9D47BA88-3F79-4161-8A70-358D63D3563C}.Release|Win32.ActiveCfg = Release|Win32
+		{9D47BA88-3F79-4161-8A70-358D63D3563C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
