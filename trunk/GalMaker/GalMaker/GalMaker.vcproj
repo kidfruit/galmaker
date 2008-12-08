@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="GalMaker"
-	ProjectGUID="{10D231E8-96A7-4ECE-AB36-54E88AEE6E3D}"
+	ProjectGUID="{FC5B612B-5D6A-4DF3-90E7-642CF9BE856C}"
 	RootNamespace="GalMaker"
 	SccProjectName="Svn"
 	SccAuxPath="Svn"
@@ -174,10 +174,6 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath=".\main.cpp"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
