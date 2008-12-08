@@ -11,6 +11,7 @@ const DWORD BUF_64M =BUF_32M*2;
 DWORD BUFSIZE=BUF_4M;
 #define FILEID	"Kylinx File Packer"
 
+
 using namespace std;
 
 struct STPackerInfo

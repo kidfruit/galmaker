@@ -1,7 +1,8 @@
 #include<iostream>
 #include<windows.h>
 #include<stdio.h>
-#include"pack.h"
+#include"PackLib.h"
+
 #define BUFSIZE	65536
 #define FILEID	"Kylinx File Packer"
 class CPackFileInstance:public CPackFile
