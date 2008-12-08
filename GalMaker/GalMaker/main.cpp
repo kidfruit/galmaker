@@ -1,11 +1,14 @@
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"
+#include "PackLib.h"
 #include <string>
+#include <iostream>
 
 #pragma comment(lib,"SDL.lib")
 #pragma comment(lib,"SDLmain.lib")
 #pragma comment(lib,"SDL_ttf.lib")
 #pragma comment(lib,"SDL_image.lib")
+
 
 
 //Screen attributes
@@ -20,9 +23,10 @@ SDL_Surface *background =NULL;
 //The event structure
 SDL_Event event;
 
+//Pack file
+CPackFile *pPacker=CPackFile::CreatePackFileInstance();
 
-
-SDL_Surface *load_image( std::string filename ) 
+SDL_Surface *load_image( char* filename ) 
 {
 	//The image that's loaded
 	SDL_Surface* loadedImage = NULL;
@@ -30,8 +34,17 @@ SDL_Surface *load_image( std::string filename )
 	//The optimized surface that will be used
 	SDL_Surface* optimizedImage = NULL;
 
-	//Load the image
-	loadedImage = IMG_Load( filename.c_str() );
+	//Unpack source file from pack	
+	if( !pPacker->CreateTempFile(filename,"graph.tmp") )
+	{
+		//Load the image
+		loadedImage = IMG_Load( filename );
+	}
+	else
+	{
+		loadedImage = IMG_Load( "graph.tmp" );
+	}
+	
 
 	//If the image loaded
 	if( loadedImage != NULL )
@@ -87,12 +100,20 @@ bool init()
 	//Set the window caption
 	SDL_WM_SetCaption( "GalMaker Alpha", NULL );
 
+	//Open graph.kid pack
+	pPacker->OpenPackFile("graph.kid");
+
 	//If everything initialized fine
 	return true;
 }
 
 void clean_up()
 {
+	//Close pack
+	pPacker->ClosePackFile();
+	//delete tmp file
+	::DeleteFile("graph.tmp");
+
 	SDL_FreeSurface( screen );
 	//Quit SDL
 	SDL_Quit();
@@ -100,6 +121,7 @@ void clean_up()
 
 int main( int argc, char* args[] )
 {
+	
 	//Quit flag
 	bool quit = false;
 
@@ -109,7 +131,7 @@ int main( int argc, char* args[] )
 		return 1;
 	}
 
-	background = load_image("background.png");
+	background = load_image("back.png");
 	apply_surface(0,0,background,screen);
 
 
