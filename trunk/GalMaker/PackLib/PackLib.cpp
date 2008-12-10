@@ -19,7 +19,7 @@ class CPackFileInstance:public CPackFile
 	virtual BOOL ClosePackFile();
 	virtual BOOL GetFileInfo(char*szPackFile,DWORD &dwOffsite,DWORD &dwSize);
 	virtual BOOL CreateTempFile(char*szPackFile,char*szTempFile);
-private:
+public:
 	BOOL Pack(char* szDir,char*szPackFileName);
 	BOOL UnPack(char*szPackFileName,char* szDestDir);
 	BOOL CreateTempFile(char* szFileInPackName);
