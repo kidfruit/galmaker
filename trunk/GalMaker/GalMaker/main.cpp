@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 int main(int argc, char* argv[])
 {
 	//Create a SDL screen.
