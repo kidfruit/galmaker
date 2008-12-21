@@ -176,7 +176,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\ButtonClass.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\MixSoundClass.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SurfaceClass.cpp"
 				>
 			</File>
 		</Filter>
@@ -185,12 +197,64 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\ButtonClass.h"
+				>
+			</File>
+			<File
+				RelativePath="..\zlib\ioapi.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MixSoundClass.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SurfaceClass.h"
+				>
+			</File>
+			<File
+				RelativePath="..\zlib\unzip.h"
+				>
+			</File>
+			<File
+				RelativePath="..\zlib\zconf.h"
+				>
+			</File>
+			<File
+				RelativePath="..\zlib\zlib.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="资源文件"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath="..\SDL_lib\lib\SDL.lib"
+				>
+			</File>
+			<File
+				RelativePath="..\SDL_lib\lib\SDL_image.lib"
+				>
+			</File>
+			<File
+				RelativePath="..\SDL_lib\lib\SDL_mixer.lib"
+				>
+			</File>
+			<File
+				RelativePath="..\SDL_lib\lib\SDL_ttf.lib"
+				>
+			</File>
+			<File
+				RelativePath="..\SDL_lib\lib\SDLmain.lib"
+				>
+			</File>
+			<File
+				RelativePath="..\zlib\dll32\zlib.lib"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
