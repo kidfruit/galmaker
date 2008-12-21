@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GalMaker", "GalMaker\GalMaker.vcproj", "{90EB8638-F971-42A3-8661-EC70F5E33589}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Packer", "Packer\Packer.vcproj", "{EB42EB63-3B5D-4F99-A248-63F548EAD3F0}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -19,10 +17,6 @@ Global
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Debug|Win32.Build.0 = Debug|Win32
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Release|Win32.ActiveCfg = Release|Win32
 		{90EB8638-F971-42A3-8661-EC70F5E33589}.Release|Win32.Build.0 = Release|Win32
-		{EB42EB63-3B5D-4F99-A248-63F548EAD3F0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{EB42EB63-3B5D-4F99-A248-63F548EAD3F0}.Debug|Win32.Build.0 = Debug|Win32
-		{EB42EB63-3B5D-4F99-A248-63F548EAD3F0}.Release|Win32.ActiveCfg = Release|Win32
-		{EB42EB63-3B5D-4F99-A248-63F548EAD3F0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
