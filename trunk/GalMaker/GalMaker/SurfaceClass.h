@@ -1,10 +1,3 @@
-//UVi Soft ( 2008 )
-//Long Fei ( lf426 ), E-mail: zbln426@163.com
-//Laboratory of ZaiBieLiunNian
-//http://www.cppblog.com/lf426/
-
-//FileName: SurfaceClass.hpp
-
 #ifndef SURFACE_CLASS_HPP
 #define SURFACE_CLASS_HPP
 

@@ -1,10 +1,3 @@
-//UVi Soft ( 2008 )
-//Long Fei ( lf426 ), E-mail: zbln426@163.com
-//Laboratory of ZaiBieLiunNian
-//http://www.cppblog.com/lf426/
-
-//FileName: MixSoundClass.hpp
-
 #ifndef MIX_SOUND_CLASS_HPP
 #define MIX_SOUND_CLASS_HPP
 
@@ -12,6 +5,8 @@
 #include <string>
 #include "SDL/SDL.h"
 #include "SDL/SDL_mixer.h"
+#include "unzip.h"
+#include "zlib.h"
 
 class BaseMixSound
 {
@@ -21,6 +16,9 @@ protected:
 	BaseMixSound();
 public:
 	virtual ~BaseMixSound();
+
+	//Get file SDLRwops buffer from zip pack
+	SDL_RWops* GetFileFromPack(const std::string& fileInPack, const std::string& packName);
 };
 
 class EffectSound: public BaseMixSound

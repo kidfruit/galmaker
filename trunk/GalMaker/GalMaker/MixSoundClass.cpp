@@ -1,8 +1,3 @@
-//UVi Soft ( 2008 )
-//Long Fei ( lf426 ), E-mail: zbln426@163.com
-//Laboratory of ZaiBieLiunNian
-//http://www.cppblog.com/lf426/
-
 #include "MixSoundClass.h"
 
 //*******************************
@@ -13,7 +8,7 @@ int BaseMixSound::MixNUM = 0;
 BaseMixSound::BaseMixSound()
 {
 	if ( MixNUM == 0 ){
-		if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ){
+		if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ){
 			std::cerr << "Mix_Open ERROR" << std::endl;
 			exit(-1);
 		}
@@ -27,6 +22,22 @@ BaseMixSound::~BaseMixSound()
 	if ( MixNUM == 0 ){
 		Mix_CloseAudio();
 	}
+}
+
+SDL_RWops* BaseMixSound::GetFileFromPack(const std::string &fileInPack, const std::string &packName)
+{
+	unzFile zip;
+	unz_file_info info;
+	Uint8 *buffer;
+
+	zip = unzOpen( packName.c_str() );
+	unzLocateFile( zip, fileInPack.c_str(), 0 );
+	unzGetCurrentFileInfo( zip, &info, NULL, 0, NULL, 0, NULL, 0 );
+	unzOpenCurrentFile( zip );
+	buffer = (Uint8*)malloc(info.uncompressed_size);
+	unzReadCurrentFile( zip, buffer, info.uncompressed_size );
+
+	return SDL_RWFromMem(buffer, info.uncompressed_size);
 }
 
 //*******************************
@@ -65,7 +76,19 @@ void EffectSound::play() const
 
 MusicSound::MusicSound(const std::string& music_fileName)
 {
-	music = Mix_LoadMUS(music_fileName.c_str());
+
+	if(unzOpen("music.kid")!=NULL)
+	{
+		SDL_RWops* rw=GetFileFromPack(music_fileName.c_str(),"music.kid");
+		music = Mix_LoadMUS_RW(rw);
+	}
+	else
+	{
+		std::string dir="./music/";
+		dir=dir+music_fileName;
+		music =Mix_LoadMUS(dir.c_str());
+	}
+
 	if (  music == 0 ){
 		std::cerr << music_fileName << " : load failed!" << std::endl;
 	}

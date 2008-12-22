@@ -1,10 +1,3 @@
-//UVi Soft ( 2008 )
-//Long Fei ( lf426 ), E-mail: zbln426@163.com
-//Laboratory of ZaiBieLiunNian
-//http://www.cppblog.com/lf426/
-
-//FileName: ButtonClass.hpp
-
 #ifndef BUTTON_CLASS_HPP
 #define BUTTON_CLASS_HPP
 
