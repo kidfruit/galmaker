@@ -17,8 +17,12 @@ int main(int argc, char* argv[])
 
 	PictureSurface background("back.png",screen);
 	MusicSound backmusic("music.ogg");
+	TextSurface text("ÄãºÃ",screen);;
+	EffectSound mouseclick("mouseclick.wav");
+
 
 	background.blit();
+	text.blit();
 	backmusic.play();
 	screen.flip();
 
@@ -30,6 +34,13 @@ int main(int argc, char* argv[])
 			{
 				flag=1;
 				break;
+			}
+			if ( gameEvent.type == SDL_MOUSEBUTTONDOWN)
+			{
+				if ( gameEvent.button.button == SDL_BUTTON_LEFT )
+				{
+					mouseclick.play();
+				}
 			}
 
 		}

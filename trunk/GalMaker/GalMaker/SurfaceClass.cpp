@@ -300,7 +300,7 @@ r(_r), g(_g), b(_b)
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Blended(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Blended(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -342,7 +342,7 @@ void TextSurface::toBlended()
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Blended(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Blended(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -360,7 +360,7 @@ void TextSurface::toSolid()
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Solid(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Solid(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -383,7 +383,7 @@ void TextSurface::toShaded(Uint8 _r, Uint8 _g, Uint8 _b)
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Shaded(pFont, message.c_str(), textColor, bgColor);
+	pSurface = myTTF_RenderString_Shaded(pFont, message.c_str(), textColor, bgColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -401,7 +401,7 @@ void TextSurface::setColor(Uint8 _r, Uint8 _g, Uint8 _b)
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Blended(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Blended(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -420,7 +420,7 @@ void TextSurface::setSize(int ttf_size)
 	TTF_Font* pFont = TTF_OpenFont(TTF_fileName.c_str(), TTF_size);
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
-	pSurface = TTF_RenderUTF8_Blended(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Blended(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);
@@ -440,7 +440,7 @@ void TextSurface::setFont(const std::string& ttf_fileName)
 	if ( pFont == 0 )
 		throw ErrorInfo(TTF_GetError());
 
-	pSurface = TTF_RenderUTF8_Blended(pFont, message.c_str(), textColor);
+	pSurface = myTTF_RenderString_Blended(pFont, message.c_str(), textColor);
 	if ( pSurface == 0 )
 		throw ErrorInfo(TTF_GetError());
 	TTF_CloseFont(pFont);

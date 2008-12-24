@@ -49,9 +49,16 @@ SDL_RWops* BaseMixSound::GetFileFromPack(const std::string &fileInPack, const st
 
 EffectSound::EffectSound(const std::string& sound_fileName)
 {
-	sound = Mix_LoadWAV(sound_fileName.c_str());
-	if ( sound == 0 ){
-		std::cerr << sound_fileName << " : load failed!" << std::endl;
+	if(unzOpen("sound.kid")!=NULL)
+	{
+		SDL_RWops* rw=GetFileFromPack(sound_fileName.c_str(),"sound.kid");
+		sound = Mix_LoadWAV_RW(rw,0);
+	}
+	else
+	{
+		std::string dir="./sound/";
+		dir=dir+sound_fileName;
+		sound = Mix_LoadWAV(dir.c_str());
 	}
 }
 
@@ -89,9 +96,6 @@ MusicSound::MusicSound(const std::string& music_fileName)
 		music =Mix_LoadMUS(dir.c_str());
 	}
 
-	if (  music == 0 ){
-		std::cerr << music_fileName << " : load failed!" << std::endl;
-	}
 }
 
 MusicSound::~MusicSound()
