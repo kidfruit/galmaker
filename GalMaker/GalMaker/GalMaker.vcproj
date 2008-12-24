@@ -180,11 +180,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\gb2312_to_Unicode.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\MixSoundClass.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SDL_render_Chinese.cpp"
 				>
 			</File>
 			<File
@@ -202,11 +210,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\gb2312_to_Unicode.h"
+				>
+			</File>
+			<File
+				RelativePath="..\libiconv\include\iconv.h"
+				>
+			</File>
+			<File
 				RelativePath="..\zlib\ioapi.h"
 				>
 			</File>
 			<File
 				RelativePath=".\MixSoundClass.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SDL_render_Chinese.h"
 				>
 			</File>
 			<File
@@ -231,6 +251,10 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath="..\libiconv\lib\iconv.lib"
+				>
+			</File>
 			<File
 				RelativePath="..\SDL_lib\lib\SDL.lib"
 				>

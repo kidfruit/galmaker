@@ -8,6 +8,7 @@
 #include "SDL/SDL_ttf.h"
 #include "unzip.h"
 #include "zlib.h"
+#include "SDL_render_Chinese.h"
 
 class ScreenSurface
 {
@@ -94,7 +95,7 @@ private:
 public:
 	TextSurface(const std::string& _message, const ScreenSurface& screen,
 		Uint8 _r = 0xFF, Uint8 _g = 0xFF, Uint8 _b = 0xFF, 
-		int ttf_size = 28, const std::string& ttf_fileName = "./fonts/times.ttf");
+		int ttf_size = 28, const std::string& ttf_fileName = "default.ttf");
 	TextSurface(const TextSurface& copy);
 	~TextSurface();
 	//text tools
