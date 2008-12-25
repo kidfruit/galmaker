@@ -6,7 +6,7 @@
 int ScreenSurface::screenNum = 0;
 
 ScreenSurface::ScreenSurface():
-width(640), height(480), bpp(32), flags(0), windowName("NULL")
+width(800), height(600), bpp(32), flags(0), windowName("NULL")
 {
 	if ( screenNum > 0 )
 		throw ErrorInfo("DONOT create more than ONE screen!");
@@ -235,6 +235,10 @@ SDL_RWops* BaseSurface::GetFileFromPack(const std::string &fileInPack, const std
 	return SDL_RWFromMem(buffer, info.uncompressed_size);
 }
 
+void BaseSurface::SetAlpha( Uint8 alpha, Uint32 flag )
+{
+	SDL_SetAlpha( pSurface, flag, alpha );
+}
 
 //************************************
 

@@ -13,16 +13,20 @@ int main(int argc, char* argv[])
 	const std::string WINDOW_NAME = "GalMaker Alpha";
 	ScreenSurface screen(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_NAME, 0, SCREEN_FLAGS);
 	SDL_Event gameEvent;
-	int flag=0;
+	int flag=0,k=0;
+	int alphaValue=150;
 
 	PictureSurface background("back.png",screen);
+	PictureSurface kidyin("yin.png",screen);
 	MusicSound backmusic("music.ogg");
-	TextSurface text("ÄãºÃ",screen);;
+	TextSurface text("ÄãºÃ",screen,255,255,255,100);
 	EffectSound mouseclick("mouseclick.wav");
 
 
-	background.blit();
-	text.blit();
+	BaseSurface surface2(background);
+	text.blit(surface2,0,0);
+	surface2.blit();
+	kidyin.SetAlpha(100);
 	backmusic.play();
 	screen.flip();
 
@@ -40,9 +44,33 @@ int main(int argc, char* argv[])
 				if ( gameEvent.button.button == SDL_BUTTON_LEFT )
 				{
 					mouseclick.play();
+					surface2.blit();
+				}		
+				if ( gameEvent.button.button == SDL_BUTTON_RIGHT )
+				{
+					mouseclick.play();
+					kidyin.blit();
+				}
+				
+			}
+			if ( gameEvent.type == SDL_KEYDOWN )
+			{
+				kidyin.blit(200,100, 400, 300, 100, 100);
+				if ( gameEvent.key.keysym.sym == SDLK_PAGEUP )
+				{
+					alphaValue+=50;
+					kidyin.SetAlpha(alphaValue);
+					//kidyin.blit(200,100, 400, 300, 100, 100);
+				}
+				if ( gameEvent.key.keysym.sym == SDLK_PAGEDOWN )
+				{
+					alphaValue-=50;
+					kidyin.SetAlpha(alphaValue);
+					//kidyin.blit(200,100, 400, 300, 100, 100);
 				}
 			}
 
+			screen.flip();
 		}
 	}
 	SDL_Delay(10);
