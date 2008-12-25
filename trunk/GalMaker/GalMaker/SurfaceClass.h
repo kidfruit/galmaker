@@ -72,6 +72,7 @@ public:
 	void colorKey(Uint8 r = 0, Uint8 g = 0xFF, Uint8 b = 0xFF, Uint32 flag = SDL_SRCCOLORKEY);
 
 	SDL_RWops* GetFileFromPack(const std::string& fileInPack, const std::string& packName);
+	void SetAlpha( Uint8 alpha, Uint32 flag = SDL_SRCALPHA );
 	
 
 };
