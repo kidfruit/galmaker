@@ -16,18 +16,25 @@ int main(int argc, char* argv[])
 	int flag=0,k=0;
 	int alphaValue=150;
 
+
 	PictureSurface background("back.png",screen);
 	PictureSurface kidyin("yin.png",screen);
 	MusicSound backmusic("music.ogg");
-	TextSurface text("ÄãºÃ",screen,255,255,255,100);
+	TextSurface text("ÄãºÃ",screen,255,255,255);
 	EffectSound mouseclick("mouseclick.wav");
+	SDL_Rect mRect={100,100,text.point()->w,text.point()->h};
 
+	text.blit(background,100,100);
+	text.blit(background,100,125);
+	text.blit(background,100,150);
+	text.blit(background,100,175);
+	text.blit(background,100,200);
+	text.blit(background,140,100);
+	text.blit(background,180,100);
 
-	BaseSurface surface2(background);
-	text.blit(surface2,0,0);
-	surface2.blit();
 	kidyin.SetAlpha(100);
 	backmusic.play();
+	kidyin.blit();
 	screen.flip();
 
 	while(flag==0)
@@ -44,7 +51,7 @@ int main(int argc, char* argv[])
 				if ( gameEvent.button.button == SDL_BUTTON_LEFT )
 				{
 					mouseclick.play();
-					surface2.blit();
+					background.blit();
 				}		
 				if ( gameEvent.button.button == SDL_BUTTON_RIGHT )
 				{
@@ -70,7 +77,7 @@ int main(int argc, char* argv[])
 				}
 			}
 
-			screen.flip();
+			screen.UpdateRect( mRect );
 		}
 	}
 	SDL_Delay(10);

@@ -58,7 +58,14 @@ void ScreenSurface::fillColor(Uint8 r, Uint8 g, Uint8 b) const
 		 throw ErrorInfo(SDL_GetError());
 }
 
+void ScreenSurface::UpdateRect( SDL_Rect Rect )
+{
+	SDL_UpdateRect( pScreen,Rect.x,Rect.y,Rect.w,Rect.h );
+}
+
 //************************************
+
+
 
 
 
