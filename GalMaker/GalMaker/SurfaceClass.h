@@ -36,6 +36,9 @@ public:
 	void flip() const;
 	//fill the screen with some color, default is black.
 	void fillColor(Uint8 r = 0, Uint8 g = 0, Uint8 b = 0) const;
+
+	//update a rect
+	void UpdateRect( SDL_Rect Rect );
 };
 
 class BaseSurface
@@ -71,6 +74,7 @@ public:
 	//color keying
 	void colorKey(Uint8 r = 0, Uint8 g = 0xFF, Uint8 b = 0xFF, Uint32 flag = SDL_SRCCOLORKEY);
 
+
 	SDL_RWops* GetFileFromPack(const std::string& fileInPack, const std::string& packName);
 	void SetAlpha( Uint8 alpha, Uint32 flag = SDL_SRCALPHA );
 	
@@ -96,7 +100,7 @@ private:
 public:
 	TextSurface(const std::string& _message, const ScreenSurface& screen,
 		Uint8 _r = 0xFF, Uint8 _g = 0xFF, Uint8 _b = 0xFF, 
-		int ttf_size = 28, const std::string& ttf_fileName = "default.ttf");
+		int ttf_size = 20, const std::string& ttf_fileName = "default.ttf");
 	TextSurface(const TextSurface& copy);
 	~TextSurface();
 	//text tools
