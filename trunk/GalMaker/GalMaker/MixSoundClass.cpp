@@ -51,7 +51,7 @@ EffectSound::EffectSound(const std::string& sound_fileName, const std::string& p
 {
 	if(unzOpen( packName.c_str() )!=NULL)
 	{
-		SDL_RWops* rw=GetFileFromPack(sound_fileName.c_str(),"sound.kid");
+		SDL_RWops* rw=GetFileFromPack(sound_fileName, packName);
 		sound = Mix_LoadWAV_RW(rw,0);
 	}
 	else
@@ -86,7 +86,7 @@ MusicSound::MusicSound(const std::string& music_fileName, const std::string& pac
 
 	if(unzOpen( packName.c_str() )!=NULL)
 	{
-		SDL_RWops* rw=GetFileFromPack(music_fileName.c_str(),"music.kid");
+		SDL_RWops* rw=GetFileFromPack(music_fileName, packName);
 		music = Mix_LoadMUS_RW(rw);
 	}
 	else

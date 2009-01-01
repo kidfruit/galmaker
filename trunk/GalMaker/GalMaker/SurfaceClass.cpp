@@ -261,7 +261,7 @@ fileName(file_name)
 	
 	if(unzOpen( packName.c_str() )!=NULL)
 	{
-		SDL_RWops* rw=GetFileFromPack(fileName.c_str(),"graph.kid");
+		SDL_RWops* rw=GetFileFromPack(fileName, packName);
 		pSurfaceTemp = IMG_Load_RW(rw,0);
 	}
 	else
