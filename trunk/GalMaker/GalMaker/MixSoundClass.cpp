@@ -47,9 +47,9 @@ SDL_RWops* BaseMixSound::GetFileFromPack(const std::string &fileInPack, const st
 //*******************************
 //class EffectSound
 
-EffectSound::EffectSound(const std::string& sound_fileName)
+EffectSound::EffectSound(const std::string& sound_fileName, const std::string& packName)
 {
-	if(unzOpen("sound.kid")!=NULL)
+	if(unzOpen( packName.c_str() )!=NULL)
 	{
 		SDL_RWops* rw=GetFileFromPack(sound_fileName.c_str(),"sound.kid");
 		sound = Mix_LoadWAV_RW(rw,0);
@@ -81,10 +81,10 @@ void EffectSound::play() const
 //*******************************
 //class MusicSound
 
-MusicSound::MusicSound(const std::string& music_fileName)
+MusicSound::MusicSound(const std::string& music_fileName, const std::string& packName)
 {
 
-	if(unzOpen("music.kid")!=NULL)
+	if(unzOpen( packName.c_str() )!=NULL)
 	{
 		SDL_RWops* rw=GetFileFromPack(music_fileName.c_str(),"music.kid");
 		music = Mix_LoadMUS_RW(rw);
