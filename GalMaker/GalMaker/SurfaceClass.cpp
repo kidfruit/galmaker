@@ -253,13 +253,13 @@ void BaseSurface::SetAlpha( Uint8 alpha, Uint32 flag )
 //************************************
 //class PictureSurface
 
-PictureSurface::PictureSurface(const std::string& file_name, const ScreenSurface& screen):
+PictureSurface::PictureSurface(const std::string& file_name, const ScreenSurface& screen, const std::string& packName):
 BaseSurface(),
 fileName(file_name)
 {
 	SDL_Surface* pSurfaceTemp;
 	
-	if(unzOpen("graph.kid")!=NULL)
+	if(unzOpen( packName.c_str() )!=NULL)
 	{
 		SDL_RWops* rw=GetFileFromPack(fileName.c_str(),"graph.kid");
 		pSurfaceTemp = IMG_Load_RW(rw,0);
