@@ -39,6 +39,7 @@ public:
 
 	//update a rect
 	void UpdateRect( const SDL_Rect Rect );
+	void UpdateRect( Sint32 x, Sint32 y, Uint32 w, Uint32 h );
 };
 
 class BaseSurface
