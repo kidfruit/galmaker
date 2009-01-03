@@ -63,6 +63,11 @@ void ScreenSurface::UpdateRect( const SDL_Rect Rect )
 	SDL_UpdateRect( pScreen,Rect.x,Rect.y,Rect.w,Rect.h );
 }
 
+void ScreenSurface::UpdateRect( Sint32 x, Sint32 y, Uint32 w, Uint32 h )
+{
+	SDL_UpdateRect( pScreen,x,y,w,h);
+}
+
 //************************************
 
 
