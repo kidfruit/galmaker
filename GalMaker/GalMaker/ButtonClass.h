@@ -47,7 +47,7 @@ public:
 	Button(const BaseSurface& out_img, const BaseSurface& over_img);
 	Button(const std::string buttonText, const ScreenSurface& screen,
 		Uint8 out_r = 0xFF, Uint8 out_g = 0xFF, Uint8 out_b = 0xFF, Uint8 on_r = 0, Uint8 on_g = 0, Uint8 on_b = 0xFF,
-		int ttf_size = 28, const std::string& ttf_fileName = "./fonts/times.ttf");
+		int ttf_size = 20, const std::string& ttf_fileName = "default.ttf");
 	virtual ~Button();
 	virtual void colorKey(Uint8 r = 0, Uint8 g = 0xFF, Uint8 b = 0xFF);
 	virtual void blitOut() const;

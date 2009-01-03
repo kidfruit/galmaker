@@ -58,7 +58,7 @@ void ScreenSurface::fillColor(Uint8 r, Uint8 g, Uint8 b) const
 		 throw ErrorInfo(SDL_GetError());
 }
 
-void ScreenSurface::UpdateRect( SDL_Rect Rect )
+void ScreenSurface::UpdateRect( const SDL_Rect Rect )
 {
 	SDL_UpdateRect( pScreen,Rect.x,Rect.y,Rect.w,Rect.h );
 }
@@ -242,7 +242,7 @@ SDL_RWops* BaseSurface::GetFileFromPack(const std::string &fileInPack, const std
 	return SDL_RWFromMem(buffer, info.uncompressed_size);
 }
 
-void BaseSurface::SetAlpha( Uint8 alpha, Uint32 flag )
+void BaseSurface::SetAlpha( const Uint8 alpha, const Uint32 flag )
 {
 	SDL_SetAlpha( pSurface, flag, alpha );
 }

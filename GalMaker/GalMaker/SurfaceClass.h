@@ -38,7 +38,7 @@ public:
 	void fillColor(Uint8 r = 0, Uint8 g = 0, Uint8 b = 0) const;
 
 	//update a rect
-	void UpdateRect( SDL_Rect Rect );
+	void UpdateRect( const SDL_Rect Rect );
 };
 
 class BaseSurface
@@ -75,8 +75,8 @@ public:
 	void colorKey(Uint8 r = 0, Uint8 g = 0xFF, Uint8 b = 0xFF, Uint32 flag = SDL_SRCCOLORKEY);
 
 
-	SDL_RWops* GetFileFromPack(const std::string& fileInPack, const std::string& packName);
-	void SetAlpha( Uint8 alpha, Uint32 flag = SDL_SRCALPHA );
+	SDL_RWops* GetFileFromPack( const std::string& fileInPack, const std::string& packName );
+	void SetAlpha( const Uint8 alpha, const Uint32 flag = SDL_SRCALPHA );
 	
 
 };
