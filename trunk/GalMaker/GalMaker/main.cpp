@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
 	{
 		while ( SDL_PollEvent(&gameEvent) != 0 )
 		{
+			
 			if ( mButton.effectiveClick(gameEvent) )
 			{
 				text.blit(100,200);
@@ -49,14 +50,17 @@ int main(int argc, char* argv[])
 					{
 						if ( gameEvent.button.button==SDL_BUTTON_LEFT )
 						{
-							SDL_Delay(10);
-							screen.flip();
+							screen.UpdateRect(100,200,200,25);
 							break;
 						}
 					}
+					SDL_Delay(10);
 				}
 				
 			}
+
+			text.clickBlit(gameEvent);
+
 			if ( gameEvent.type == SDL_QUIT )
 			{
 				flag=1;
@@ -94,10 +98,15 @@ int main(int argc, char* argv[])
 			}
 
 			screen.flip();
-			SDL_Delay(10);
+
 		}
+		SDL_Delay(10);
 	}
 	SDL_Delay(10);
 
 	return 0;
 }
+
+
+
+

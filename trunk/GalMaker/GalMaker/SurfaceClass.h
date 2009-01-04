@@ -54,8 +54,10 @@ public:
 	BaseSurface(const BaseSurface& copy);
 	virtual ~BaseSurface();
 	BaseSurface& operator=(const BaseSurface& copy);
+
 	//surface's point
 	SDL_Surface* point() const;
+
 	//blit surface to screen
 	void blit() const;
 	void blit(int any_num) const;
@@ -63,6 +65,7 @@ public:
 	void blit(int at_x, int at_y,
 				int from_x, int from_y, int w, int h,
 				int delta_x = 0, int delta_y = 0) const;
+
 	//blit surface to another surface
 	void blit(const BaseSurface& dst_surface) const;
 	void blit(const BaseSurface& dst_surface, int any_num) const;
@@ -72,13 +75,17 @@ public:
 						int at_x, int at_y,
 						int from_x, int from_y, int w, int h,
 						int delta_x = 0, int delta_y = 0) const;
+
 	//color keying
 	void colorKey(Uint8 r = 0, Uint8 g = 0xFF, Uint8 b = 0xFF, Uint32 flag = SDL_SRCCOLORKEY);
 
-
+	//load file buffer from packfile
 	SDL_RWops* GetFileFromPack( const std::string& fileInPack, const std::string& packName );
+
 	void SetAlpha( const Uint8 alpha, const Uint32 flag = SDL_SRCALPHA );
 	
+	//event
+	void clickBlit( SDL_Event& game_Event );
 
 };
 
@@ -111,6 +118,8 @@ public:
 	void setColor(Uint8 _r, Uint8 _g, Uint8 _b);
 	void setSize(int ttf_size);
 	void setFont(const std::string& ttf_fileName);
+
+
 };
 
 class ErrorInfo

@@ -252,6 +252,20 @@ void BaseSurface::SetAlpha( const Uint8 alpha, const Uint32 flag )
 	SDL_SetAlpha( pSurface, flag, alpha );
 }
 
+
+void BaseSurface::clickBlit( SDL_Event& game_Event )
+{
+	SDL_Rect offset;
+	if ( game_Event.type==SDL_MOUSEBUTTONDOWN && game_Event.button.button==SDL_BUTTON_LEFT )
+	{
+		offset.x=game_Event.button.x;
+		offset.y=game_Event.button.y;
+		
+		SDL_BlitSurface( pSurface,NULL,pScreen,&offset );
+		
+	}
+}
+
 //************************************
 
 
