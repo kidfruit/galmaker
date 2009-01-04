@@ -272,9 +272,9 @@ void BaseSurface::clickBlit( SDL_Event& game_Event )
 //************************************
 //class PictureSurface
 
-PictureSurface::PictureSurface(const std::string& file_name, const ScreenSurface& screen, const std::string& packName):
+PictureSurface::PictureSurface(const std::string& file_name, const ScreenSurface& screen, const std::string& pack_Name):
 BaseSurface(),
-fileName(file_name)
+fileName(file_name),packName(pack_Name)
 {
 	SDL_Surface* pSurfaceTemp;
 	
@@ -285,7 +285,7 @@ fileName(file_name)
 	}
 	else
 	{
-		std::string dir="./graph/";
+		std::string dir="./image/";
 		fileName=dir+fileName;
 		pSurfaceTemp = IMG_Load(fileName.c_str());
 	}

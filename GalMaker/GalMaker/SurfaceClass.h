@@ -93,8 +93,9 @@ class PictureSurface: public BaseSurface
 {
 private:
 	std::string fileName;
+	std::string packName;
 public:
-	PictureSurface(const std::string& file_name, const ScreenSurface& screen, const std::string& packName="graph.kid");
+	PictureSurface(const std::string& file_name, const ScreenSurface& screen, const std::string& packName="image.kid");
 };
 
 class TextSurface: public BaseSurface
