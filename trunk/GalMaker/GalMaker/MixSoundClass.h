@@ -26,7 +26,7 @@ class EffectSound: public BaseMixSound
 private:
 	Mix_Chunk* sound;
 public:
-	EffectSound(const std::string& sound_fileName, const std::string& packName="sound.kid");
+	EffectSound(const std::string& sound_fileName, const std::string& pack_Name="sound.kid");
 	~EffectSound();
 	void play() const;
 };
@@ -36,7 +36,7 @@ class MusicSound: public BaseMixSound
 private:
 	Mix_Music* music;
 public:
-	MusicSound(const std::string& music_fileName, const std::string& packName="music.kid");
+	MusicSound(const std::string& music_fileName, const std::string& pack_Name="music.kid");
 	~MusicSound();
 	void play() const;
 	void stop() const;
